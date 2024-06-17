@@ -1,0 +1,57 @@
+/* --------Dispositivos móviles------------ */
+header {
+  width: 100%;
+  background-color: var(--blue-background);
+  padding: 1rem 1.13rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-logo {
+  display: block;
+}
+.desktop-logo {
+  display: none;
+}
+
+.buttons-circle {
+  display: flex;
+  gap: 1.3125rem;
+  align-items: center;
+}
+.mobile-circle {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 100%;
+  background-color: var(--grey-details);
+}
+nav {
+  background-color: var(--grey-background);
+  padding: 2.18rem 1rem 1.13rem;
+  display: flex;
+  justify-content: space-between;
+}
+nav div.navigation-links {
+  display: flex;
+  gap: 2.5rem;
+}
+.nav-link h2 {
+  color: var(--grey-light);
+  font-weight: var(--font-bold);
+  font-size: 1.1rem;
+}
+.nav-link.active h2 {
+  color: var(--orange);
+}
+
+/* ----------- Media query para escritorio ------------- */
+@media (min-width: 769px) {
+  .mobile-logo {
+    display: none;
+  }
+  .desktop-logo {
+    display: block;
+  }
+}

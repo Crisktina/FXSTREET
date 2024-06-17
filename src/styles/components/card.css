@@ -1,0 +1,96 @@
+div.card {
+  border: 1px solid var(--grey-details);
+  border-radius: 4px;
+  background-color: var(--background-white);
+}
+div.card-category {
+  background-color: var(--grey-background-rgba);
+  padding: 0.7rem 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.category-analysis {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+div.category-analysis h5 {
+  font-size: 0.8rem;
+  color: var(--blue-dark);
+}
+
+.category-name {
+  color: var(--blue-light);
+  font-size: 1rem;
+}
+.clock-icon {
+  color: var(--grey-light);
+}
+.date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.date p {
+  font-size: 0.8rem;
+}
+.card-author {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.author {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.author-name {
+  color: var(--grey-light-text);
+  font-weight: var(--font-bold);
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+.slash {
+  font-size: 1rem;
+}
+.card-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+.title-image {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background-color: var(--blue-light);
+  margin-right: 0.75rem;
+}
+.card-title h3 {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+.card-separator {
+  border-bottom: 1px solid var(--grey-background);
+}
+.card-body {
+  padding: 1rem;
+}
+
+.card-body p {
+  font-weight: var(--font-light);
+  font-size: 0.92rem;
+}
+
+.card-body p a {
+  font-weight: var(--font-bold);
+  color: var(--orange);
+}
+
+.card-options {
+  display: flex;
+  gap: 3.12rem;
+  padding: 0 1rem 1rem;
+}

@@ -1,0 +1,24 @@
+button.initial-button {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--grey-dark);
+  border: none;
+  background-color: #ffffff00;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 21;
+}
+.card-options button.actived .material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 21;
+}
+
+/* ----------- Media query para escritorio ------------- */
+@media (min-width: 769px) {
+  button.initial-button {
+    cursor: pointer;
+  }
+  button.initial-button:hover {
+    color: var(--hover-color);
+  }
+}

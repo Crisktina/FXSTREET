@@ -1,0 +1,82 @@
+:root {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --background-white: #ffffff;
+  --grey-dark: #49494f;
+  --orange: #e4871b;
+  --grey-light: #8c8d91;
+  --grey-light-text: #a3a3a8;
+  --grey-background: #ececf1;
+  --grey-background-rgba: rgba(236, 236, 241, 0.5);
+  --grey-details: #dddedf;
+  --blue-dark: #304c70;
+  --blue-background: #242d38;
+  --blue-light: #7598c4;
+  --like: #d25746;
+  --save: #338473;
+
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --font-bold: 700;
+  --font-light: 300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  min-width: 320px;
+  min-height: 100dvh;
+  background-color: var(--grey-background);
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+p {
+  text-wrap: pretty;
+  color: var(--grey-dark);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  color: var(--grey-dark);
+}
+h5 {
+  font-size: 0.8rem;
+}
+
+img,
+video,
+svg {
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
