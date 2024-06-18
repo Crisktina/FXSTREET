@@ -8,11 +8,12 @@ function Card() {
   return (
     <div className="card">
       <div className="card-category">
-        <div>
+        <div className="card-feed-category">
           <div className="category-analysis">
             <img src={analysis} alt="Analysis icon" />
             <h5>Analysis</h5>
           </div>
+          <span className="material-symbols-outlined">arrow_right</span>
           <h5 className="category-name">Webinars</h5>
         </div>
         <div className="date">
@@ -26,10 +27,10 @@ function Card() {
           <p className="author-name slash">|</p>
           <p className="author-name">FXStreet</p>
         </div>
-        <div className="card-title">
-          <div className="title-image"></div>
-          <h3>FXS Premium - lorem ipsum dolor sit em</h3>
-        </div>
+        <div className="author-image"></div>
+        <h3 className="card-title">
+          FXS Premium - lorem ipsum dolor sit emlorem ipsum dolor sit em
+        </h3>
       </div>
       <div className="card-separator"></div>
       <div className="card-body">

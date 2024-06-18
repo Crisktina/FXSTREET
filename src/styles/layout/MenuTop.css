@@ -1,0 +1,36 @@
+.menu-top {
+  display: none;
+}
+@media (min-width: 769px) {
+  .menu-top {
+    grid-area: 1 / 2 / 2 / 4;
+    height: 4.0625rem;
+    width: 100%;
+    background-color: var(--background-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1.625rem;
+    padding-right: 2.8125rem;
+  }
+  .circle-line {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5625rem;
+  }
+  .menu-top-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .menu-top-right-cercle-line {
+    display: flex;
+    align-items: center;
+    width: 2.9rem;
+    height: 100%;
+    border-left: 2px solid var(--grey-background);
+    padding-left: 1.5625rem;
+    margin-left: 1.5625rem;
+  }
+}

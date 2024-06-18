@@ -23,8 +23,8 @@ function Button({ iconName, text = "", colorActive, addText = "" }) {
         color: active
           ? colorActive
           : hovered
-          ? "var(--hover-color)"
-          : "inherit",
+          ? colorActive
+          : "var(--grey-dark)",
       }}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}

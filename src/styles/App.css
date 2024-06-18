@@ -1,5 +1,15 @@
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
+}
+@media (min-width: 769px) {
+  #root {
+    display: grid;
+    grid-template-columns: 15.9375rem 46.8125rem 27.1875rem;
+    grid-template-rows: 4.0625rem 100%;
+  }
+  .feed-box {
+    grid-area: 2 / 2 / 3 / 3;
+  }
 }

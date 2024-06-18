@@ -1,0 +1,52 @@
+nav {
+  background-color: var(--grey-background);
+  padding: 2.18rem 1rem 1.13rem;
+  display: flex;
+  justify-content: space-between;
+}
+nav div.navigation-links {
+  display: flex;
+  gap: 2.5rem;
+}
+.nav-link h2 {
+  color: var(--grey-light);
+  font-weight: var(--font-bold);
+  font-size: 1.1rem;
+}
+.nav-link.active h2 {
+  color: var(--orange);
+}
+.filter-button {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  nav {
+    padding: 2.18rem 1.5rem 1.13rem;
+  }
+  .nav-link h2 {
+    cursor: pointer;
+  }
+  .nav-link h2:hover {
+    color: var(--grey-dark);
+  }
+  .filter-icon {
+    display: none;
+  }
+  .filter-button {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .filter-button p {
+    font-size: 0.92rem;
+  }
+  .filter-button div {
+    display: flex;
+    gap: 7px;
+  }
+  .filter-button div p {
+    font-weight: var(--font-bold);
+    font-size: 1.1rem;
+  }
+}

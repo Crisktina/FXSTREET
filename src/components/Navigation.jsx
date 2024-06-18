@@ -1,33 +1,48 @@
 import fxstreet from "../assets/fxstreet.svg";
 import fxspremium from "../assets/fxspremium.svg";
-import filter from "../assets/filter.svg";
 import "../styles/layout/Navigation.css";
-import { NavLink } from "react-router-dom";
+import Circle from "./Circle";
+import MenuTop from "./MenuTop";
+import LineFakeLayout from "./LineFakeLayout";
+import Widgets from "./Widgets";
 
 function Navigation() {
   return (
     <>
+      <MenuTop />
       <header>
         <a href="#">
           <img src={fxspremium} className="mobile-logo" alt="FXSTREET logo" />
           <img src={fxstreet} className="desktop-logo" alt="FXSTREET logo" />
         </a>
         <div className="buttons-circle">
-          <div className="mobile-circle"></div>
-          <div className="mobile-circle"></div>
+          <Circle backgroundColor="var(--grey-details)" />
+          <Circle backgroundColor="var(--grey-details)" />
+        </div>
+        <div className="menu-lateral">
+          <LineFakeLayout
+            width="6.9rem"
+            backgroundColor="var(--background-white)"
+          />
+          <LineFakeLayout
+            width="6.9rem"
+            backgroundColor="var(--background-white)"
+          />
+          <LineFakeLayout
+            width="6.9rem"
+            backgroundColor="var(--background-white)"
+          />
+          <LineFakeLayout
+            width="6.9rem"
+            backgroundColor="var(--background-white)"
+          />
+          <LineFakeLayout
+            width="6.9rem"
+            backgroundColor="var(--background-white)"
+          />
         </div>
       </header>
-      <nav>
-        <div className="navigation-links">
-          <NavLink to="/latest" className="nav-link">
-            <h2>Latest</h2>
-          </NavLink>
-          <NavLink to="/popular" className="nav-link">
-            <h2>Popular</h2>
-          </NavLink>
-        </div>
-        <img src={filter} alt="Filter icon" />
-      </nav>
+      <Widgets />
     </>
   );
 }

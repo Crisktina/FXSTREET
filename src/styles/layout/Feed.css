@@ -4,3 +4,8 @@
   flex-direction: column;
   gap: 1rem;
 }
+@media (min-width: 769px) {
+  .feed {
+    padding: 0 1.5rem 1rem;
+  }
+}
