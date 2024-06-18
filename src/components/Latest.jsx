@@ -1,12 +1,32 @@
 import Card from "./Card";
 import "../styles/layout/Feed.css";
+import PropTypes from "prop-types";
 
-function Latest() {
+function Latest({ data = [] }) {
   return (
     <div className="feed">
-      <Card />
+      {data.length > 0
+        ? data
+            .filter((d) => d.isPopular == false)
+            .map((d) => (
+              <Card
+                key={d.id}
+                feed={d.feed}
+                subFeed={d.subFeed}
+                date={d.publicationTime}
+                authorName={d.author.name}
+                authorCompany={d.author.companyName}
+                authorImg={d.author.imageUrl}
+                title={d.title}
+                content={d.content}
+              />
+            ))
+        : "No data available."}
     </div>
   );
 }
+Latest.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default Latest;

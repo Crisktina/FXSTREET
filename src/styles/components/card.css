@@ -76,18 +76,17 @@ div.category-analysis h5 {
 }
 .card-body {
   padding: 1rem;
-}
-
-.card-body p {
   font-weight: var(--font-light);
   font-size: 0.92rem;
 }
 
-.card-body p a {
+.card-body a {
   font-weight: var(--font-bold);
   color: var(--orange);
 }
-
+.card-body img {
+  margin-top: 15px;
+}
 .card-options {
   display: flex;
   gap: 3.12rem;
@@ -136,7 +135,7 @@ div.card-feed-category span.material-symbols-outlined {
   .author-name {
     font-size: 1rem;
   }
-  .card-body p {
+  .card-body {
     font-size: 1.2rem;
   }
 }
