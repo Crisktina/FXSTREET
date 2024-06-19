@@ -4,6 +4,37 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import Button from "./Button";
 import PropTypes from "prop-types";
+import { useState, useRef, useEffect } from "react";
+import FilterTypes from "./FilterTypes";
+import HideTell from "./HideTell";
+
+function formatDate(apiDate) {
+  const date = new Date(apiDate);
+  //formato de fecha UTC (universal)
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const month = monthNames[date.getUTCMonth()];
+  const day = date.getUTCDate();
+  const hours = date.getUTCHours();
+  const minutes = date.getUTCMinutes();
+
+  const formattedHours = hours.toString().padStart(2, "0");
+  const formattedMinutes = minutes.toString().padStart(2, "0");
+
+  return `${month} ${day}, ${formattedHours}:${formattedMinutes}`;
+}
 
 function Card({
   feed,
@@ -15,6 +46,45 @@ function Card({
   title,
   content,
 }) {
+  const formattedDate = formatDate(date);
+
+  const [showFilters, setShowFilters] = useState(false);
+  const [showTell, setShowTell] = useState(false);
+
+  const filtersRef = useRef(null);
+  const tellRef = useRef(null);
+
+  const handleFiltersClick = () => {
+    setShowFilters(!showFilters);
+    setShowTell(false);
+  };
+
+  const handleTellClick = () => {
+    setShowTell(true);
+    setShowFilters(false);
+  };
+
+  const handleBackToFilters = () => {
+    setShowFilters(true);
+    setShowTell(false);
+  };
+
+  const handleClickOutside = (e) => {
+    if (filtersRef.current && !filtersRef.current.contains(e.target)) {
+      setShowFilters(false);
+    }
+    if (tellRef.current && !tellRef.current.contains(e.target)) {
+      setShowTell(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="card">
       <div className="card-category">
@@ -28,7 +98,7 @@ function Card({
         </div>
         <div className="date">
           <FontAwesomeIcon icon={faClock} className="clock-icon" />
-          <p>{date}May 24, 11:02</p>
+          <p>{formattedDate}</p>
         </div>
       </div>
       <div className="card-author">
@@ -60,16 +130,32 @@ function Card({
           addText="d!"
           colorActive="var(--save)"
         />
-        <Button
-          iconName="more_horiz"
-          text=""
-          addText=""
-          colorActive="var(--grey-light))"
-        />
+        <button
+          className="initial-button more-button"
+          onClick={handleFiltersClick}
+        >
+          <span className="material-symbols-outlined">more_horiz</span>
+        </button>
       </div>
+      {showFilters && (
+        <div className="overlay">
+          <div ref={filtersRef}>
+            <FilterTypes onTellClick={handleTellClick} />
+          </div>
+        </div>
+      )}
+      {showTell && (
+        <div className="hideBoxCard" ref={tellRef}>
+          <HideTell
+            setShowTell={setShowTell}
+            onBackToFilters={handleBackToFilters}
+          />
+        </div>
+      )}
     </div>
   );
 }
+
 Card.propTypes = {
   feed: PropTypes.string.isRequired,
   subFeed: PropTypes.string.isRequired,
@@ -80,4 +166,5 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
 };
+
 export default Card;

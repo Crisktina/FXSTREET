@@ -24,6 +24,7 @@ div.category-analysis h5 {
 .category-name {
   color: var(--blue-light);
   font-size: 1rem;
+  line-height: 1.25rem;
 }
 .clock-icon {
   color: var(--grey-light);
@@ -31,6 +32,7 @@ div.category-analysis h5 {
 .date {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 6px;
 }
 .date p {
@@ -38,9 +40,10 @@ div.category-analysis h5 {
 }
 .card-author {
   display: grid;
-  grid-template-columns: 2.9375rem 100%;
+  grid-template-columns: 2.9375rem 93%;
   grid-template-rows: 1.3125rem 100%;
   padding: 1rem;
+  overflow: hidden;
 }
 .author {
   grid-area: 1 / 1 / 2 / 3;
@@ -65,11 +68,13 @@ div.category-analysis h5 {
   border-radius: 100%;
   background-color: var(--blue-light);
   margin-right: 0.75rem;
+  overflow: hidden;
 }
 .card-title {
   font-size: 1.1rem;
   line-height: 1.3rem;
   grid-area: 2 / 2 / 3 / 3;
+  word-wrap: break-word;
 }
 .card-separator {
   border-bottom: 1px solid var(--grey-background);
@@ -78,6 +83,9 @@ div.category-analysis h5 {
   padding: 1rem;
   font-weight: var(--font-light);
   font-size: 0.92rem;
+  line-height: 1.25rem;
+  text-align: left;
+  text-align-last: left;
 }
 
 .card-body a {
@@ -85,7 +93,8 @@ div.category-analysis h5 {
   color: var(--orange);
 }
 .card-body img {
-  margin-top: 15px;
+  width: 100%;
+  margin-top: 0.563rem;
 }
 .card-options {
   display: flex;
@@ -95,7 +104,31 @@ div.category-analysis h5 {
 div.card-feed-category span.material-symbols-outlined {
   display: none;
 }
+
+.more-button {
+  z-index: 1001;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 @media (min-width: 769px) {
+  .overlay {
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+  }
+  div.card-category {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+  }
   .card-feed-category {
     display: flex;
     align-items: center;
@@ -109,6 +142,7 @@ div.card-feed-category span.material-symbols-outlined {
   }
   .category-name {
     font-size: 1.1rem;
+    line-height: 1.3rem;
   }
   div.card-feed-category span.material-symbols-outlined {
     display: block;
@@ -118,6 +152,8 @@ div.card-feed-category span.material-symbols-outlined {
   .card-author {
     grid-template-columns: 4.375rem 37rem;
     grid-template-rows: 1.6875rem 100%;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
   }
   .card-title {
     grid-area: 2 / 2 / 3 / 3;
@@ -137,5 +173,15 @@ div.card-feed-category span.material-symbols-outlined {
   }
   .card-body {
     font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+  }
+  .card-body img {
+    margin-top: 0.9375rem;
+  }
+  .card-options {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
   }
 }

@@ -26,7 +26,7 @@ Figma prototypes can be found [here](https://www.figma.com/design/YBSLd3pKqEIKDY
 
 ## Technical Tips
 
-1. **Mocked API**: You can get the data from the [Mocked API](https://run.mocky.io/v3/96314262-67b1-455b-a2b2-ef1711d4634c).
+1. **Mocked API**: You can get the data from the [Mocked API](https://fxsfrontend.fxstreet.workers.dev/).
 2. **Popular Post**: The property `isPopular` is set to true for popular posts.
 3. **Post Order**: Order the list of posts as shown in the prototype.
 
@@ -45,3 +45,7 @@ To set up the project locally, follow these steps:
    ```sh
    npm run dev
    ```
+
+## Deployment
+
+[Go to the website](---)

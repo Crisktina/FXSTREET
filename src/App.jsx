@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Latest from "./components/Latest";
 import Popular from "./components/Popular";
@@ -30,6 +30,7 @@ function App() {
       <div className="feed-box">
         <FeedMenu />
         <Routes>
+          <Route path="/" element={<Navigate to="/latest" />} />
           <Route path="/latest" element={<Latest data={data} />} />
           <Route path="/popular" element={<Popular data={data} />} />
         </Routes>

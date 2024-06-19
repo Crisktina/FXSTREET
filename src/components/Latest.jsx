@@ -7,7 +7,7 @@ function Latest({ data = [] }) {
     <div className="feed">
       {data.length > 0
         ? data
-            .filter((d) => d.isPopular == false)
+            .filter((d) => !d.isPopular)
             .map((d) => (
               <Card
                 key={d.id}
