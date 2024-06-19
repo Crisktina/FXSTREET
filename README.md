@@ -48,4 +48,4 @@ To set up the project locally, follow these steps:
 
 ## Deployment
 
-[Go to the website](---)
+[Go to the website](https://crisktina.github.io/FXSTREET/)
