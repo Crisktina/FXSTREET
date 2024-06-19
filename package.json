@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Crisktina.github.io/FXSTREET",
+  "homepage": "https://crisktina.github.io/FXSTREET",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
