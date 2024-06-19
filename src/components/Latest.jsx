@@ -8,6 +8,7 @@ function Latest({ data = [] }) {
       {data.length > 0
         ? data
             .filter((d) => !d.isPopular)
+            .slice(0, 2)
             .map((d) => (
               <Card
                 key={d.id}

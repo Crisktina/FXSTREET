@@ -8,6 +8,7 @@ function Popular({ data = [] }) {
       {data.length > 0
         ? data
             .filter((d) => d.isPopular)
+            .slice(0, 1)
             .map((d) => (
               <Card
                 key={d.id}
